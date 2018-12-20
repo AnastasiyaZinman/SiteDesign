@@ -7,7 +7,6 @@ body {
 /*Global*/
 .container {
     width: 90%;
-    
     margin: 0 auto;
     overflow: hidden;
 }
@@ -47,21 +46,28 @@ ul {
      min-height: 70px;
      border-bottom: #54abe6 3px solid;
  }
+ header .container {
+    display: flex;
+    justify-content: space-between;
+ }
   header a {
       color: #ffffff;
       text-decoration: none;
       text-transform: uppercase;
       font-size: 16px;
   }
+    .container ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    }
 
 header li {
-    float: left;
-    display: inline;
     padding: 0 20px 0 20px;
 }
-header #branding {
+/* header #branding {
     float: left;
-}
+} */
 header #branding h1{
     margin: 0;
 }
@@ -73,10 +79,7 @@ header a:hover{
     color: #cccccc;
     font-weight: bold;
 }
-header nav {
-float:right;
-margin-top: 10px;
-}
+
 /*Showcase*/
 #showcase {
     min-height: 400px;
@@ -98,26 +101,30 @@ margin-top: 10px;
     color: #ffffff;
     background-color: #042142;
 }
+#newsletter .container {
+    display: flex;
+    justify-content: space-between;
+}
 #newsletter h1 {
-    float: left;
 }
 #newsletter form {
-    float: right;
     margin: 15px;
 }
 #newsletter input[type="email"] {
     padding: 4px;
-    height:25px;
-    width:250px;
+    height: 25px;
+    width: 250px;
 }
 /*Boxes*/
+#boxes .container {
+    display:flex;
+    justify-content: space-between;
+}
 #boxes {
     margin-top: 10px;
 }
 #boxes .box {
-    width: 30%;
     padding: 10px;
-    float: left;
     text-align: center;
 }
 #boxes .box img {
@@ -130,10 +137,13 @@ margin-top: 10px;
     margin: 5px;
 }
 /*SideBar*/
+#main .container {
+    display: flex;
+    justify-content: space-between;
+}
 aside#sidebar {
-    float: right;
-    width: 30%;
-    margin-top: 10px;
+    min-width: 300px;
+    margin: 10px 20px 0 40px;
 }
 #sidebar .quote .center-btn{
     text-align: center;
@@ -144,10 +154,10 @@ padding: 5px;
 margin: 5px;
 }
 /*main-col*/
-article#main-col{
-    float:left;
-    width: 65%;
-
+#main .container #main-col ul#services{
+    display: flex;
+    flex-direction: column;
+    width:100%;
 }
 #main p {
     text-align: justify;
@@ -180,11 +190,15 @@ background: #e6e6e6;
     article#main-col,
     aside#sidebar 
     {
-        float: none;
         text-align: center;
         width: 100%;
     }
-    header {
+
+    header .container, 
+    #newsletter .container,
+    #boxes .container,
+    #main .container {
+        flex-wrap: wrap;
         padding-bottom: 20px;
     }
     
@@ -193,7 +207,7 @@ margin-top:40px;
 }
 #newsletter form input[type = "email"], 
 .quote input,
- .quote textarea {
+ .quote textarea{
     width: 100%;
     margin: 5px 0 5px;
 }
@@ -201,6 +215,6 @@ margin-top:40px;
  width:100%;
 }
 .quote button {
-    width:95%;
+    width:100%;
 } 
  }
